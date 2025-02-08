@@ -1,0 +1,42 @@
+:root {
+  --color-primary: #843bfb;
+  --color-primary-light: #9d63fc;
+  --color-primary-dark: #6a2fd9;
+  
+  --color-secondary: #ffc107;
+  --color-secondary-light: #ffd166;
+  --color-secondary-dark: #e5a100;
+  
+  --color-accent: #2ccfaa;
+  --color-accent-light: #4ce1b6;
+  --color-accent-dark: #1fa088;
+  
+  --color-neutral-lightest: #f8f9fa;
+  --color-neutral-light: #e9ecef;
+  --color-neutral: #dee2e6;
+  --color-neutral-dark: #343a40;
+}
+
+/* Global styles */
+body {
+  @apply bg-neutral-lightest text-neutral-dark;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-neutral-dark px-4 py-2 rounded-lg hover:bg-secondary-dark transition-colors duration-200;
+}
+
+/* Input styles */
+.input-primary {
+  @apply border border-neutral rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+/* Link styles */
+.link-primary {
+  @apply text-primary hover:text-primary-dark transition-colors duration-200;
+} 
