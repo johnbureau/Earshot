@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Color Scheme
+- Primary: #843bfb (Purple)
+- Primary Light: #9d63fc
+- Primary Dark: #6a2fd9
+- Secondary: #ffc107 (Gold)
+- Accent: #2ccfaa (Teal)
+- Neutral: Various gray shades
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Live Demo
+Visit [https://johnbureau.github.io/Earshot](https://johnbureau.github.io/Earshot) to see the live application.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
