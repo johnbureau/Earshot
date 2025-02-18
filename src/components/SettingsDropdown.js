@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 function SettingsDropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const { setIsLoggedIn } = useAuth();
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -21,6 +21,11 @@ function SettingsDropdown() {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    setIsOpen(false);
+  };
+
+  const handleToggleAuth = () => {
+    setIsLoggedIn(!isLoggedIn);
     setIsOpen(false);
   };
 
@@ -63,6 +68,13 @@ function SettingsDropdown() {
           >
             Preferences
           </Link>
+          <div className="border-t border-gray-100"></div>
+          <button
+            onClick={handleToggleAuth}
+            className="block w-full text-left px-4 py-2 text-sm text-purple-600 hover:bg-gray-100"
+          >
+            {isLoggedIn ? 'Switch to Logged Out' : 'Switch to Logged In'}
+          </button>
           <div className="border-t border-gray-100"></div>
           <button
             onClick={handleLogout}

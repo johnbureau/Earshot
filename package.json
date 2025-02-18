@@ -3,20 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "cra-template": "1.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^6.29.0",
+    "@react-google-maps/api": "^2.20.6",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "date-fns": "2.30.0",
+    "html2canvas": "^1.4.1",
+    "react": "^18.2.0",
+    "react-datepicker": "^8.0.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.21.1",
+    "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^4.2.4"
+    "recharts": "2.10.4",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env PORT=3000 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -37,9 +43,15 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "postcss-loader": "^7.3.4",
     "tailwindcss": "^3.3.0"
   },
-  "homepage": "https://johnbureau.github.io/Earshot"
+  "homepage": "https://johnbureau.github.io/Earshot",
+  "resolutions": {
+    "source-map-loader": "^1.0.0",
+    "postcss": "^8.4.32",
+    "postcss-loader": "^7.3.4"
+  }
 }
