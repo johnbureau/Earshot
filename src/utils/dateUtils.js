@@ -1,5 +1,5 @@
-import { format as dateFnsFormat } from 'date-fns/esm';
 import { 
+  format as dateFnsFormat,
   startOfMonth,
   endOfMonth,
   eachDayOfInterval,
@@ -10,7 +10,7 @@ import {
   parseISO,
   addDays,
   isWithinInterval
-} from 'date-fns/esm';
+} from 'date-fns';
 
 export const format = (date, formatStr) => {
   try {
