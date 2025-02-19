@@ -1,48 +1,46 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // import './App.css';  
-import Navbar from './components/Navbar';
-import SideNav from './components/SideNav';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import Events from './pages/Events';
 import Places from './pages/Places';
 import Profiles from './pages/Profiles';
-import About from './pages/About';
+import Resources from './pages/Resources';
 import Business from './pages/Business';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
 import HostProfile from './pages/HostProfile';
 import CreatorProfile from './pages/CreatorProfile';
 import Profile from './pages/Profile';
+import { UserProvider } from './context/UserContext';
+import Admin from './pages/Admin';
 
 function DefaultRoute() {
-  const { isLoggedIn } = useAuth();
-  return isLoggedIn ? <Navigate to="/business" replace /> : <Home />;
+  return <Navigate to="/home" replace />;
 }
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <div className="min-h-screen bg-neutral-lightest">
-          <Navbar />
-          <SideNav />
-          <div className="ml-64 pt-16"> {/* Add margin for sidenav and padding for navbar */}
-            <div className="p-8">
-              <Routes>
-                <Route path="/" element={<DefaultRoute />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/places" element={<Places />} />
-                <Route path="/profiles" element={<Profiles />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/business" element={<Business />} />
-                <Route path="/hosts/:hostId" element={<HostProfile />} />
-                <Route path="/creators/:creatorId" element={<CreatorProfile />} />
-                <Route path="/profile/:userType/:userId" element={<Profile />} />
-              </Routes>
-            </div>
-          </div>
-        </div>
-      </Router>
-    </AuthProvider>
+    <BrowserRouter>
+      <UserProvider>
+        <AuthProvider>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route index element={<DefaultRoute />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/places" element={<Places />} />
+              <Route path="/profiles" element={<Profiles />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/business" element={<Business />} />
+              <Route path="/hosts/:hostId" element={<HostProfile />} />
+              <Route path="/creators/:creatorId" element={<CreatorProfile />} />
+              <Route path="/profile/:userType/:userId" element={<Profile />} />
+              <Route path="/admin/*" element={<Admin />} />
+            </Route>
+          </Routes>
+        </AuthProvider>
+      </UserProvider>
+    </BrowserRouter>
   );
 }
 
